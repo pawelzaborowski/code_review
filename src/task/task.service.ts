@@ -24,7 +24,7 @@ export class TaskService {
     task.title = input.title;
     task.description = input.description ? input.description : null;
     task.value = input.value ? input.value : 1;
-    await this.saveTask(task);
+    await this._taskRepository.save(task);
   }
 
   async getAllTasks(): Promise<TaskEntity[]> {
